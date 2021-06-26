@@ -30,19 +30,19 @@ public class Attack_Timer : MonoBehaviour
     {
         if (Attack_Counter == 1)
         {
-            timeValue = 45;
+            timeValue = 60;
         }
         else if (Attack_Counter == 2)
         {
-            timeValue = 45;
+            timeValue = 60;
         }
         else if (Attack_Counter == 3)
         {
-            timeValue = 10;
+            timeValue = 60;
         }
         else if (Attack_Counter == 4)
         {
-            timeValue = 20;
+            timeValue = 60;
         }
 
     }

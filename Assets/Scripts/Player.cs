@@ -26,14 +26,11 @@ public class Player : MonoBehaviour
     {
        float movement = Input.GetAxis("Horizontal");
         anim.SetFloat("Speed", Mathf.Abs(movement));
-        
         rb.AddForce( new Vector2(speed * movement, 0));
-        is_Killed = Attack.Player_Killed;
-      //  Debug.Log(is_Killed);
-        if (is_Killed)
-        {
-            Debug.Log("Player is killed");
-        }
+
+       // is_Killed = Attack.Player_Killed;
+       Debug.Log(rb.position.x);
+        
         if (movement < 0 && !FacingRight)
         {
            // FacingRight = false;
@@ -46,36 +43,20 @@ public class Player : MonoBehaviour
         }
 
         //CheckJump();
-       // Jump();
-    }
-    /*private void Jump()
-    {
-        if (Input.GetKeyDown("up"))
+        Jump();
+
+        if (Family_Keeper.family==4)
         {
-            rb.AddForce(new Vector2(0,50),ForceMode2D.Impulse);
-            //anim.SetBool("isJumping", true);
+            FindObjectOfType<LevelLoader>().HappyEnding();
 
         }
-    }*/
-
+    }
+   
     public void OnLanding()
     {
         anim.SetBool("isJumping", false);
     }
 
-    /*
-    void CheckJump() 
-    {
-        if (rb.position.y > 0)
-        {
-            anim.SetBool("isJumping", true);
-;
-        }
-        else 
-        {
-            anim.SetBool("isJumping", false);
-        }
-    }*/
 
     void Filp() 
     {
@@ -91,7 +72,7 @@ public class Player : MonoBehaviour
         {
             Debug.Log("Jumping");
             CheckJump();
-            rb.AddForce(Vector2.up * speed);
+            rb.AddForce(Vector2.up*speed,ForceMode2D.Impulse);
         }
     }
     void CheckJump()

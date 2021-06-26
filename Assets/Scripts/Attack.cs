@@ -19,26 +19,26 @@ public class Attack : MonoBehaviour
             if (gameObject.name == "Window 1")
             {
                 StartCoroutine(FlashRed(60f));
-                StartCoroutine(Destroy_Window(9, 45f));
+                StartCoroutine(Destroy_Window(9, 60f));
 
             }
             else if (gameObject.name == "Window 2")
             {
                 StartCoroutine(FlashRed(240f));
-                StartCoroutine(Destroy_Window(10, 100f));
+                StartCoroutine(Destroy_Window(10, 240f));
 
             }
             else if (gameObject.name == "Window 3")
             {
                 StartCoroutine(FlashRed(120f));
-                StartCoroutine(Destroy_Window(11, 55f));
+                StartCoroutine(Destroy_Window(11, 120f));
 
 
             }
             else if (gameObject.name == "Window 4")
             {
                 StartCoroutine(FlashRed(180f));
-                StartCoroutine(Destroy_Window(12, 75f));
+                StartCoroutine(Destroy_Window(12, 180f));
 
             }
         }
@@ -77,19 +77,22 @@ public class Attack : MonoBehaviour
                     // Debug.Log("Family is killed");
                     if (Family_Keeper.family != 4 && Player_layer != go.layer)
                     {
-                        yield return new WaitForSeconds(0.8f);
-                        FindObjectOfType<LevelLoader>().SadEnding();
+                        //yield return new WaitForSeconds(0.8f);
+                         FindObjectOfType<LevelLoader>().SadEnding();
+                        Debug.Log("Sad Ending");
                     }
                 }
-                else if (Family_Keeper.family == 4 && Player_layer == go.layer)
+                else if (Family_Keeper.family == 4)
                 {
                     yield return new WaitForSeconds(0.8f);
                     FindObjectOfType<LevelLoader>().HappyEnding();
+                    Debug.Log("Happy Ending");
 
                 }
                 else {
                     yield return new WaitForSeconds(0.8f);
-                    FindObjectOfType<LevelLoader>().NormalEnding();
+                     FindObjectOfType<LevelLoader>().NormalEnding();
+                    Debug.Log("Normal Ending");
 
                 }
             }

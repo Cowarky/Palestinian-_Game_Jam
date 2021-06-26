@@ -2,12 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Family_Keeper : MonoBehaviour
 {
      public static int family = 0;
     public Text textFamily;
 
+  
     private void OnTriggerEnter2D(Collider2D collision)
     {
 

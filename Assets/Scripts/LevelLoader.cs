@@ -9,16 +9,16 @@ public class LevelLoader : MonoBehaviour
 
     public void SadEnding()
     {
-        SceneManager.LoadScene(4);
+        SceneManager.LoadScene("Ending 2");
     }
 
     public  void NormalEnding()
     {
-        SceneManager.LoadScene(3);
+        SceneManager.LoadScene("Ending 1");
     }
    public  void HappyEnding()
     {
-        SceneManager.LoadScene(5);
+        SceneManager.LoadScene("Ending 3");
     }
 
 
